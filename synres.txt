@@ -1,0 +1,1010 @@
+
+                      Design Compiler Graphical
+                            DC Ultra (TM)
+                             DFTMAX (TM)
+                         Power Compiler (TM)
+                           DesignWare (R)
+                           DC Expert (TM)
+                         Design Vision (TM)
+                          HDL Compiler (TM)
+                         VHDL Compiler (TM)
+                            DFT Compiler
+                        Library Compiler (TM)
+                         Design Compiler(R)
+
+          Version I-2013.12-SP5 for RHEL32 -- Jul 20, 2014
+               Copyright (c) 1988-2014 Synopsys, Inc.
+
+This software and the associated documentation are confidential and 
+proprietary to Synopsys, Inc. Your use or disclosure of this software 
+is subject to the terms and conditions of a written license agreement 
+between you, or your company, and Synopsys, Inc.
+
+Information: As of the J-2014.09 version of dc_shell, the 32-bit
+             version of the product will not be delivered by default.
+             If you require a 32-bit version for any reason, please
+             contact Synopsys technical support.
+
+Initializing...
+set link_library {/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_NOMIN25 /apps/synopsys/I-2013.12-SP5/libraries/syn/dw_foundation.sldb}
+/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_NOMIN25 /apps/synopsys/I-2013.12-SP5/libraries/syn/dw_foundation.sldb
+set target_library {/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_NOMIN25}
+/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_NOMIN25
+analyze -format verilog lshift.v
+Running PRESTO HDLC
+Searching for ./lshift.v
+Compiling source file ./lshift.v
+Presto compilation completed successfully.
+Loading db file '/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_NOMIN25'
+Loading db file '/apps/synopsys/I-2013.12-SP5/libraries/syn/dw_foundation.sldb'
+1
+analyze -format verilog signext.v
+Running PRESTO HDLC
+Searching for ./signext.v
+Compiling source file ./signext.v
+Presto compilation completed successfully.
+1
+analyze -format verilog gpr.v
+Running PRESTO HDLC
+Searching for ./gpr.v
+Compiling source file ./gpr.v
+Presto compilation completed successfully.
+1
+analyze -format verilog mux_2x1.v
+Running PRESTO HDLC
+Searching for ./mux_2x1.v
+Compiling source file ./mux_2x1.v
+Presto compilation completed successfully.
+1
+analyze -format verilog alu.v
+Running PRESTO HDLC
+Searching for ./alu.v
+Compiling source file ./alu.v
+Presto compilation completed successfully.
+1
+analyze -format verilog control_unit.v
+Running PRESTO HDLC
+Searching for ./control_unit.v
+Compiling source file ./control_unit.v
+Presto compilation completed successfully.
+1
+analyze -format verilog pc.v
+Running PRESTO HDLC
+Searching for ./pc.v
+Compiling source file ./pc.v
+Presto compilation completed successfully.
+1
+analyze -format verilog forward_stall.v
+Running PRESTO HDLC
+Searching for ./forward_stall.v
+Compiling source file ./forward_stall.v
+Presto compilation completed successfully.
+1
+analyze -format verilog processor.v
+Running PRESTO HDLC
+Searching for ./processor.v
+Compiling source file ./processor.v
+Presto compilation completed successfully.
+1
+elaborate processor
+Loading db file '/apps/synopsys/I-2013.12-SP5/libraries/syn/gtech.db'
+Loading db file '/apps/synopsys/I-2013.12-SP5/libraries/syn/standard.sldb'
+  Loading link library 'tc240c'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+
+Inferred memory devices in process
+	in routine processor line 115 in file
+		'./processor.v'.
+====================================================================================
+|      Register Name       |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+====================================================================================
+|       mw_Dout_reg        | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    mw_ALU_Result_reg     | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       xm_stall_reg       | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|    xm_ALU_Result_reg     | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     xm_pc_plus_8_reg     | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       xm_Inst_reg        | Flip-flop |  27   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       dx_stall_reg       | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|   dx_gpr_rd_data2_reg    | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     dx_pc_plus_8_reg     | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       dx_Inst_reg        | Flip-flop |  27   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       fd_Inst_reg        | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+| dx_Inst_15_0_signext_reg | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       dx_shamt_reg       | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   dx_gpr_rd_data1_reg    | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   dx_gpr_rd_addr1_reg    | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
+| xm_STORE_write_data_reg  | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       mw_Inst_reg        | Flip-flop |  21   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     mw_pc_plus_8_reg     | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+====================================================================================
+
+Inferred memory devices in process
+	in routine processor line 435 in file
+		'./processor.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+| xm_gpr_wr_addr_reg  | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   gpr_wr_addr_reg   | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'processor'.
+Information: Building the design 'signext'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'lshift'. (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'mux_2x1' instantiated from design 'processor' with
+	the parameters "DATA_WIDTH=32". (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'pc'. (HDL-193)
+
+Inferred memory devices in process
+	in routine pc line 29 in file
+		'./pc.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     pc_val_reg      | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     pc_val_reg      | Flip-flop |  28   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'control_unit'. (HDL-193)
+
+Statistics for case statements in always block at line 110 in file
+	'./control_unit.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           111            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine control_unit line 147 in file
+		'./control_unit.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   mw_RegDest_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|   xm_RegDest_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|   mw_RegWrite_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|   dx_RegDest_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|  dx_isSLL_SRL_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|    dx_isJAL_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Information: Building the design 'mux_2x1' instantiated from design 'processor' with
+	the parameters "DATA_WIDTH=5". (HDL-193)
+Presto compilation completed successfully.
+Information: Building the design 'gpr'. (HDL-193)
+
+Inferred memory devices in process
+	in routine gpr line 18 in file
+		'./gpr.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       gpr_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|       gpr_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|       gpr_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|       gpr_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|       gpr_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|       gpr_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|       gpr_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|       gpr_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|       gpr_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|       gpr_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|       gpr_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|       gpr_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|       gpr_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|       gpr_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|       gpr_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|       gpr_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|       gpr_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|       gpr_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|       gpr_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|       gpr_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|       gpr_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|       gpr_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|       gpr_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|       gpr_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|       gpr_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|       gpr_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|       gpr_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|       gpr_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|       gpr_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|       gpr_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|       gpr_reg       | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+===========================================================
+| block name/line  | Inputs | Outputs | # sel inputs | MB |
+===========================================================
+|      gpr/24      |   32   |   32    |      5       | N  |
+|      gpr/25      |   32   |   32    |      5       | N  |
+===========================================================
+Presto compilation completed successfully.
+Information: Building the design 'alu'. (HDL-193)
+Warning:  Starting with the 2000.11-1 release, the Presto Verilog reader treats Verilog 'integer' types as signed; synthesized result may not match earlier versions of HDL Compiler. (VER-314)
+Warning:  ./alu.v:14: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./alu.v:15: unsigned to signed assignment occurs. (VER-318)
+Warning:  ./alu.v:36: signed to unsigned assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 12 in file
+	'./alu.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            16            |    auto/auto     |
+===============================================
+Presto compilation completed successfully.
+Information: Building the design 'forward_stall'. (HDL-193)
+Presto compilation completed successfully.
+1
+current_design processor
+Current design is 'processor'.
+{processor}
+create_clock clock -name clock -period 3.0
+1
+set_propagated_clock clock
+Information: set_input_delay values are added to the propagated clock skew. (TIM-113)
+1
+set_clock_uncertainty 0.25 clock
+1
+set_propagated_clock clock
+Information: set_input_delay values are added to the propagated clock skew. (TIM-113)
+1
+set_output_delay 0.5 -clock clock [all_outputs]
+1
+set all_inputs_wo_rst_clk [remove_from_collection [remove_from_collection [all_inputs] [get_port clock]] [get_port reset]]
+{Inst[31] Inst[30] Inst[29] Inst[28] Inst[27] Inst[26] Inst[25] Inst[24] Inst[23] Inst[22] Inst[21] Inst[20] Inst[19] Inst[18] Inst[17] Inst[16] Inst[15] Inst[14] Inst[13] Inst[12] Inst[11] Inst[10] Inst[9] Inst[8] Inst[7] Inst[6] Inst[5] Inst[4] Inst[3] Inst[2] Inst[1] Inst[0] Dout[31] Dout[30] Dout[29] Dout[28] Dout[27] Dout[26] Dout[25] Dout[24] Dout[23] Dout[22] Dout[21] Dout[20] Dout[19] Dout[18] Dout[17] Dout[16] Dout[15] Dout[14] Dout[13] Dout[12] Dout[11] Dout[10] Dout[9] Dout[8] Dout[7] Dout[6] Dout[5] Dout[4] Dout[3] Dout[2] Dout[1] Dout[0]}
+set_driving_cell -lib_cell CND2X1 $all_inputs_wo_rst_clk
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+1
+set_input_delay 0.6 -clock clock $all_inputs_wo_rst_clk
+1
+set_output_delay 0.6 -clock clock [all_outputs]
+1
+set_fix_hold [ get_clocks clock ]
+1
+set_output_delay 0.3 -clock clock [all_outputs]
+1
+set_wire_load_model -name T8G00TW8
+1
+compile_ultra
+Alib files are up-to-date.
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | I-2013.12-DWBB_201312.5 |     *     |
+| Licensed DW Building Blocks        | I-2013.12-DWBB_201312.5 |     *     |
+============================================================================
+
+Information: Sequential output inversion is enabled.  SVF file must be used for formal verification. (OPT-1208)
+
+Information: There are 162 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+Loaded alib file './alib-52/tc240c.db_NOMIN25.alib'
+Information: Ungrouping hierarchy signext_u0 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy lshift_u0 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy mux_2x1_FWD_D1 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy mux_2x1_FWD_D2 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy mux_2x1_FWD_D3 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy mux_2x1_FWD_D4 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy pc_u0 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy control_unit_u0 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy mux_2x1_u2 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy mux_2x1_u3 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy mux_2x1_u4 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy mux_2x1_u5 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy mux_2x1_u6 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy mux_2x1_u7 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy mux_2x1_u8 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy mux_2x1_u9 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy mux_2x1_u10 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy mux_2x1_u11 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy mux_2x1_u12 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy mux_2x1_u13 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy alu_u0 before Pass 1 (OPT-776)
+Information: Ungrouping hierarchy forward_stall_u0 before Pass 1 (OPT-776)
+Information: Ungrouping 22 of 24 hierarchies before Pass 1 (OPT-775)
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'gpr'
+ Implement Synthetic for 'gpr'.
+  Processing 'processor'
+Information: Added key list 'DesignWare' to design 'processor'. (DDB-72)
+Information: The register 'dx_shamt_reg[5]' is a constant and will be removed. (OPT-1206)
+Information: The register 'dx_shamt_reg[6]' is a constant and will be removed. (OPT-1206)
+Information: The register 'dx_shamt_reg[7]' is a constant and will be removed. (OPT-1206)
+Information: The register 'dx_shamt_reg[8]' is a constant and will be removed. (OPT-1206)
+Information: The register 'dx_shamt_reg[9]' is a constant and will be removed. (OPT-1206)
+Information: The register 'dx_shamt_reg[10]' is a constant and will be removed. (OPT-1206)
+Information: The register 'dx_shamt_reg[11]' is a constant and will be removed. (OPT-1206)
+Information: The register 'dx_shamt_reg[12]' is a constant and will be removed. (OPT-1206)
+Information: The register 'dx_shamt_reg[13]' is a constant and will be removed. (OPT-1206)
+Information: The register 'dx_shamt_reg[14]' is a constant and will be removed. (OPT-1206)
+Information: The register 'dx_shamt_reg[15]' is a constant and will be removed. (OPT-1206)
+Information: The register 'dx_shamt_reg[16]' is a constant and will be removed. (OPT-1206)
+Information: The register 'dx_shamt_reg[17]' is a constant and will be removed. (OPT-1206)
+Information: The register 'dx_shamt_reg[18]' is a constant and will be removed. (OPT-1206)
+Information: The register 'dx_shamt_reg[19]' is a constant and will be removed. (OPT-1206)
+Information: The register 'dx_shamt_reg[20]' is a constant and will be removed. (OPT-1206)
+Information: The register 'dx_shamt_reg[21]' is a constant and will be removed. (OPT-1206)
+Information: The register 'dx_shamt_reg[22]' is a constant and will be removed. (OPT-1206)
+Information: The register 'dx_shamt_reg[23]' is a constant and will be removed. (OPT-1206)
+Information: The register 'dx_shamt_reg[24]' is a constant and will be removed. (OPT-1206)
+Information: The register 'dx_shamt_reg[25]' is a constant and will be removed. (OPT-1206)
+Information: The register 'dx_shamt_reg[26]' is a constant and will be removed. (OPT-1206)
+Information: The register 'dx_shamt_reg[27]' is a constant and will be removed. (OPT-1206)
+Information: The register 'dx_shamt_reg[28]' is a constant and will be removed. (OPT-1206)
+Information: The register 'dx_shamt_reg[29]' is a constant and will be removed. (OPT-1206)
+Information: The register 'dx_shamt_reg[30]' is a constant and will be removed. (OPT-1206)
+Information: The register 'dx_shamt_reg[31]' is a constant and will be removed. (OPT-1206)
+Information: In design 'processor', the register 'dx_Inst_15_0_signext_reg[29]' is removed because it is merged to 'dx_Inst_15_0_signext_reg[31]'. (OPT-1215)
+Information: In design 'processor', the register 'dx_Inst_15_0_signext_reg[27]' is removed because it is merged to 'dx_Inst_15_0_signext_reg[31]'. (OPT-1215)
+Information: In design 'processor', the register 'dx_Inst_15_0_signext_reg[25]' is removed because it is merged to 'dx_Inst_15_0_signext_reg[31]'. (OPT-1215)
+Information: In design 'processor', the register 'dx_Inst_15_0_signext_reg[23]' is removed because it is merged to 'dx_Inst_15_0_signext_reg[31]'. (OPT-1215)
+Information: In design 'processor', the register 'dx_Inst_15_0_signext_reg[21]' is removed because it is merged to 'dx_Inst_15_0_signext_reg[31]'. (OPT-1215)
+Information: In design 'processor', the register 'dx_Inst_15_0_signext_reg[19]' is removed because it is merged to 'dx_Inst_15_0_signext_reg[31]'. (OPT-1215)
+Information: In design 'processor', the register 'dx_Inst_15_0_signext_reg[17]' is removed because it is merged to 'dx_Inst_15_0_signext_reg[31]'. (OPT-1215)
+Information: In design 'processor', the register 'dx_Inst_15_0_signext_reg[15]' is removed because it is merged to 'dx_Inst_15_0_signext_reg[31]'. (OPT-1215)
+Information: In design 'processor', the register 'dx_Inst_15_0_signext_reg[16]' is removed because it is merged to 'dx_Inst_15_0_signext_reg[31]'. (OPT-1215)
+Information: In design 'processor', the register 'dx_Inst_15_0_signext_reg[18]' is removed because it is merged to 'dx_Inst_15_0_signext_reg[31]'. (OPT-1215)
+Information: In design 'processor', the register 'dx_Inst_15_0_signext_reg[20]' is removed because it is merged to 'dx_Inst_15_0_signext_reg[31]'. (OPT-1215)
+Information: In design 'processor', the register 'dx_Inst_15_0_signext_reg[22]' is removed because it is merged to 'dx_Inst_15_0_signext_reg[31]'. (OPT-1215)
+Information: In design 'processor', the register 'dx_Inst_15_0_signext_reg[24]' is removed because it is merged to 'dx_Inst_15_0_signext_reg[31]'. (OPT-1215)
+Information: In design 'processor', the register 'dx_Inst_15_0_signext_reg[26]' is removed because it is merged to 'dx_Inst_15_0_signext_reg[31]'. (OPT-1215)
+Information: In design 'processor', the register 'dx_Inst_15_0_signext_reg[28]' is removed because it is merged to 'dx_Inst_15_0_signext_reg[31]'. (OPT-1215)
+Information: In design 'processor', the register 'dx_Inst_15_0_signext_reg[30]' is removed because it is merged to 'dx_Inst_15_0_signext_reg[31]'. (OPT-1215)
+Information: In design 'processor', the register 'dx_Inst_reg[15]' is removed because it is merged to 'dx_Inst_15_0_signext_reg[31]'. (OPT-1215)
+Information: In design 'processor', the register 'dx_Inst_reg[14]' is removed because it is merged to 'dx_Inst_15_0_signext_reg[14]'. (OPT-1215)
+Information: In design 'processor', the register 'dx_Inst_reg[13]' is removed because it is merged to 'dx_Inst_15_0_signext_reg[13]'. (OPT-1215)
+Information: In design 'processor', the register 'dx_Inst_reg[12]' is removed because it is merged to 'dx_Inst_15_0_signext_reg[12]'. (OPT-1215)
+Information: In design 'processor', the register 'dx_Inst_reg[11]' is removed because it is merged to 'dx_Inst_15_0_signext_reg[11]'. (OPT-1215)
+Information: In design 'processor', the register 'dx_shamt_reg[4]' is removed because it is merged to 'dx_Inst_15_0_signext_reg[10]'. (OPT-1215)
+Information: In design 'processor', the register 'dx_shamt_reg[3]' is removed because it is merged to 'dx_Inst_15_0_signext_reg[9]'. (OPT-1215)
+Information: In design 'processor', the register 'dx_shamt_reg[2]' is removed because it is merged to 'dx_Inst_15_0_signext_reg[8]'. (OPT-1215)
+Information: In design 'processor', the register 'dx_shamt_reg[1]' is removed because it is merged to 'dx_Inst_15_0_signext_reg[7]'. (OPT-1215)
+Information: In design 'processor', the register 'dx_shamt_reg[0]' is removed because it is merged to 'dx_Inst_15_0_signext_reg[6]'. (OPT-1215)
+Information: In design 'processor', the register 'dx_Inst_reg[5]' is removed because it is merged to 'dx_Inst_15_0_signext_reg[5]'. (OPT-1215)
+Information: In design 'processor', the register 'dx_Inst_reg[4]' is removed because it is merged to 'dx_Inst_15_0_signext_reg[4]'. (OPT-1215)
+Information: In design 'processor', the register 'dx_Inst_reg[3]' is removed because it is merged to 'dx_Inst_15_0_signext_reg[3]'. (OPT-1215)
+Information: In design 'processor', the register 'dx_Inst_reg[2]' is removed because it is merged to 'dx_Inst_15_0_signext_reg[2]'. (OPT-1215)
+Information: In design 'processor', the register 'dx_Inst_reg[1]' is removed because it is merged to 'dx_Inst_15_0_signext_reg[1]'. (OPT-1215)
+Information: In design 'processor', the register 'dx_Inst_reg[0]' is removed because it is merged to 'dx_Inst_15_0_signext_reg[0]'. (OPT-1215)
+ Implement Synthetic for 'processor'.
+Information: The register 'mw_pc_plus_8_reg[0]' will be removed. (OPT-1207)
+Information: The register 'xm_pc_plus_8_reg[0]' will be removed. (OPT-1207)
+Information: The register 'dx_pc_plus_8_reg[0]' will be removed. (OPT-1207)
+Information: The register 'mw_pc_plus_8_reg[1]' will be removed. (OPT-1207)
+Information: The register 'xm_pc_plus_8_reg[1]' will be removed. (OPT-1207)
+Information: The register 'dx_pc_plus_8_reg[1]' will be removed. (OPT-1207)
+Information: The register 'mw_pc_plus_8_reg[2]' will be removed. (OPT-1207)
+Information: The register 'xm_pc_plus_8_reg[2]' will be removed. (OPT-1207)
+Information: The register 'dx_pc_plus_8_reg[2]' will be removed. (OPT-1207)
+Information: The register 'mw_pc_plus_8_reg[3]' will be removed. (OPT-1207)
+Information: The register 'xm_pc_plus_8_reg[3]' will be removed. (OPT-1207)
+Information: The register 'dx_pc_plus_8_reg[3]' will be removed. (OPT-1207)
+Information: The register 'mw_pc_plus_8_reg[4]' will be removed. (OPT-1207)
+Information: The register 'xm_pc_plus_8_reg[4]' will be removed. (OPT-1207)
+Information: The register 'dx_pc_plus_8_reg[4]' will be removed. (OPT-1207)
+Information: The register 'mw_pc_plus_8_reg[5]' will be removed. (OPT-1207)
+Information: The register 'xm_pc_plus_8_reg[5]' will be removed. (OPT-1207)
+Information: The register 'dx_pc_plus_8_reg[5]' will be removed. (OPT-1207)
+Information: The register 'mw_pc_plus_8_reg[6]' will be removed. (OPT-1207)
+Information: The register 'xm_pc_plus_8_reg[6]' will be removed. (OPT-1207)
+Information: The register 'dx_pc_plus_8_reg[6]' will be removed. (OPT-1207)
+Information: The register 'mw_pc_plus_8_reg[7]' will be removed. (OPT-1207)
+Information: The register 'xm_pc_plus_8_reg[7]' will be removed. (OPT-1207)
+Information: The register 'dx_pc_plus_8_reg[7]' will be removed. (OPT-1207)
+Information: The register 'mw_pc_plus_8_reg[8]' will be removed. (OPT-1207)
+Information: The register 'xm_pc_plus_8_reg[8]' will be removed. (OPT-1207)
+Information: The register 'dx_pc_plus_8_reg[8]' will be removed. (OPT-1207)
+Information: The register 'mw_pc_plus_8_reg[9]' will be removed. (OPT-1207)
+Information: The register 'xm_pc_plus_8_reg[9]' will be removed. (OPT-1207)
+Information: The register 'dx_pc_plus_8_reg[9]' will be removed. (OPT-1207)
+Information: The register 'mw_pc_plus_8_reg[10]' will be removed. (OPT-1207)
+Information: The register 'xm_pc_plus_8_reg[10]' will be removed. (OPT-1207)
+Information: The register 'dx_pc_plus_8_reg[10]' will be removed. (OPT-1207)
+Information: The register 'mw_pc_plus_8_reg[11]' will be removed. (OPT-1207)
+Information: The register 'xm_pc_plus_8_reg[11]' will be removed. (OPT-1207)
+Information: The register 'dx_pc_plus_8_reg[11]' will be removed. (OPT-1207)
+Information: The register 'mw_pc_plus_8_reg[12]' will be removed. (OPT-1207)
+Information: The register 'xm_pc_plus_8_reg[12]' will be removed. (OPT-1207)
+Information: The register 'dx_pc_plus_8_reg[12]' will be removed. (OPT-1207)
+Information: The register 'mw_pc_plus_8_reg[13]' will be removed. (OPT-1207)
+Information: The register 'xm_pc_plus_8_reg[13]' will be removed. (OPT-1207)
+Information: The register 'dx_pc_plus_8_reg[13]' will be removed. (OPT-1207)
+Information: The register 'mw_pc_plus_8_reg[14]' will be removed. (OPT-1207)
+Information: The register 'xm_pc_plus_8_reg[14]' will be removed. (OPT-1207)
+Information: The register 'dx_pc_plus_8_reg[14]' will be removed. (OPT-1207)
+Information: The register 'mw_pc_plus_8_reg[15]' will be removed. (OPT-1207)
+Information: The register 'xm_pc_plus_8_reg[15]' will be removed. (OPT-1207)
+Information: The register 'dx_pc_plus_8_reg[15]' will be removed. (OPT-1207)
+Information: The register 'mw_pc_plus_8_reg[16]' will be removed. (OPT-1207)
+Information: The register 'xm_pc_plus_8_reg[16]' will be removed. (OPT-1207)
+Information: The register 'dx_pc_plus_8_reg[16]' will be removed. (OPT-1207)
+Information: The register 'mw_pc_plus_8_reg[17]' will be removed. (OPT-1207)
+Information: The register 'xm_pc_plus_8_reg[17]' will be removed. (OPT-1207)
+Information: The register 'dx_pc_plus_8_reg[17]' will be removed. (OPT-1207)
+Information: The register 'mw_pc_plus_8_reg[18]' will be removed. (OPT-1207)
+Information: The register 'xm_pc_plus_8_reg[18]' will be removed. (OPT-1207)
+Information: The register 'dx_pc_plus_8_reg[18]' will be removed. (OPT-1207)
+Information: The register 'mw_pc_plus_8_reg[19]' will be removed. (OPT-1207)
+Information: The register 'xm_pc_plus_8_reg[19]' will be removed. (OPT-1207)
+Information: The register 'dx_pc_plus_8_reg[19]' will be removed. (OPT-1207)
+Information: The register 'mw_pc_plus_8_reg[20]' will be removed. (OPT-1207)
+Information: The register 'xm_pc_plus_8_reg[20]' will be removed. (OPT-1207)
+Information: The register 'dx_pc_plus_8_reg[20]' will be removed. (OPT-1207)
+Information: The register 'mw_pc_plus_8_reg[21]' will be removed. (OPT-1207)
+Information: The register 'xm_pc_plus_8_reg[21]' will be removed. (OPT-1207)
+Information: The register 'dx_pc_plus_8_reg[21]' will be removed. (OPT-1207)
+Information: The register 'mw_pc_plus_8_reg[22]' will be removed. (OPT-1207)
+Information: The register 'xm_pc_plus_8_reg[22]' will be removed. (OPT-1207)
+Information: The register 'dx_pc_plus_8_reg[22]' will be removed. (OPT-1207)
+Information: The register 'mw_pc_plus_8_reg[23]' will be removed. (OPT-1207)
+Information: The register 'xm_pc_plus_8_reg[23]' will be removed. (OPT-1207)
+Information: The register 'dx_pc_plus_8_reg[23]' will be removed. (OPT-1207)
+Information: The register 'mw_pc_plus_8_reg[24]' will be removed. (OPT-1207)
+Information: The register 'xm_pc_plus_8_reg[24]' will be removed. (OPT-1207)
+Information: The register 'dx_pc_plus_8_reg[24]' will be removed. (OPT-1207)
+Information: The register 'mw_pc_plus_8_reg[25]' will be removed. (OPT-1207)
+Information: The register 'xm_pc_plus_8_reg[25]' will be removed. (OPT-1207)
+Information: The register 'dx_pc_plus_8_reg[25]' will be removed. (OPT-1207)
+Information: The register 'mw_pc_plus_8_reg[26]' will be removed. (OPT-1207)
+Information: The register 'xm_pc_plus_8_reg[26]' will be removed. (OPT-1207)
+Information: The register 'dx_pc_plus_8_reg[26]' will be removed. (OPT-1207)
+Information: The register 'mw_pc_plus_8_reg[27]' will be removed. (OPT-1207)
+Information: The register 'xm_pc_plus_8_reg[27]' will be removed. (OPT-1207)
+Information: The register 'dx_pc_plus_8_reg[27]' will be removed. (OPT-1207)
+Information: The register 'mw_pc_plus_8_reg[28]' will be removed. (OPT-1207)
+Information: The register 'xm_pc_plus_8_reg[28]' will be removed. (OPT-1207)
+Information: The register 'dx_pc_plus_8_reg[28]' will be removed. (OPT-1207)
+Information: The register 'mw_pc_plus_8_reg[29]' will be removed. (OPT-1207)
+Information: The register 'xm_pc_plus_8_reg[29]' will be removed. (OPT-1207)
+Information: The register 'dx_pc_plus_8_reg[29]' will be removed. (OPT-1207)
+Information: The register 'mw_pc_plus_8_reg[30]' will be removed. (OPT-1207)
+Information: The register 'xm_pc_plus_8_reg[30]' will be removed. (OPT-1207)
+Information: The register 'dx_pc_plus_8_reg[30]' will be removed. (OPT-1207)
+Information: The register 'mw_pc_plus_8_reg[31]' will be removed. (OPT-1207)
+Information: The register 'xm_pc_plus_8_reg[31]' will be removed. (OPT-1207)
+Information: The register 'dx_pc_plus_8_reg[31]' will be removed. (OPT-1207)
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Information: Input delay ('fall') on clock port 'clock' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('rise') on clock port 'clock' will be added to the clock's propagated skew. (TIM-112)
+
+  Beginning Mapping Optimizations  (Ultra High effort)
+  -------------------------------
+  Mapping Optimization (Phase 1)
+  Mapping Optimization (Phase 2)
+  Mapping Optimization (Phase 3)
+  Mapping Optimization (Phase 4)
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                             MIN DELAY
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            COST   
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:49   28958.0      1.45     252.0       0.0                                0.00
+    0:00:49   28958.0      1.45     252.0       0.0                                0.00
+    0:00:49   28958.0      1.45     252.0       0.0                                0.00
+    0:00:50   28956.0      1.44     252.0       0.0                                0.00
+  Re-synthesis Optimization (Phase 1)
+  Re-synthesis Optimization (Phase 2)
+  Global Optimization (Phase 1)
+  Global Optimization (Phase 2)
+  Global Optimization (Phase 3)
+  Global Optimization (Phase 4)
+  Global Optimization (Phase 5)
+  Global Optimization (Phase 6)
+  Global Optimization (Phase 7)
+  Global Optimization (Phase 8)
+  Global Optimization (Phase 9)
+  Global Optimization (Phase 10)
+  Global Optimization (Phase 11)
+  Global Optimization (Phase 12)
+  Global Optimization (Phase 13)
+  Global Optimization (Phase 14)
+  Global Optimization (Phase 15)
+  Global Optimization (Phase 16)
+  Global Optimization (Phase 17)
+  Global Optimization (Phase 18)
+  Global Optimization (Phase 19)
+  Global Optimization (Phase 20)
+  Global Optimization (Phase 21)
+  Global Optimization (Phase 22)
+  Global Optimization (Phase 23)
+  Global Optimization (Phase 24)
+  Global Optimization (Phase 25)
+  Global Optimization (Phase 26)
+  Global Optimization (Phase 27)
+  Global Optimization (Phase 28)
+  Global Optimization (Phase 29)
+  Global Optimization (Phase 30)
+  Global Optimization (Phase 31)
+Information: Input delay ('fall') on clock port 'clock' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('rise') on clock port 'clock' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('fall') on clock port 'clock' will be added to the clock's propagated skew. (TIM-112)
+Information: Input delay ('rise') on clock port 'clock' will be added to the clock's propagated skew. (TIM-112)
+    0:00:58   17622.5      1.38     131.1      49.8                                0.00
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                             MIN DELAY
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            COST   
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:58   17622.5      1.38     131.1      49.8                                0.00
+    0:00:58   17698.0      1.32     123.6      61.3                                0.00
+    0:00:59   17821.5      1.32     120.2     141.8                                0.00
+    0:01:00   17960.5      1.32     116.0     145.8                                0.00
+    0:01:09   18549.5      1.20     108.4     145.8                                0.00
+    0:01:09   18549.5      1.20     108.4     145.8                                0.00
+    0:01:09   18587.0      1.18     107.4     145.8                                0.00
+    0:01:09   18587.0      1.18     107.4     145.8                                0.00
+    0:01:12   18692.5      1.18     107.2     145.8                                0.00
+    0:01:12   18692.5      1.18     107.2     145.8                                0.00
+    0:01:26   19422.5      1.05      99.3     153.8                                0.00
+    0:01:26   19422.5      1.05      99.3     153.8                                0.00
+    0:01:28   19419.0      1.04      99.4     153.8                                0.00
+
+  Beginning Delay Optimization
+  ----------------------------
+    0:01:29   19414.5      1.04      99.4     154.2                                0.00
+    0:01:33   19572.0      1.03      98.3     154.2                                0.00
+    0:01:33   19572.0      1.03      98.3     154.2                                0.00
+    0:01:34   19572.0      1.03      98.3     154.2                                0.00
+    0:01:34   19572.0      1.03      98.3     154.2                                0.00
+    0:01:34   19572.0      1.03      98.3     154.2                                0.00
+    0:01:34   19572.0      1.03      98.3     154.2                                0.00
+    0:01:35   19572.0      1.03      98.3     154.2                                0.00
+
+
+  Beginning Design Rule Fixing  (min_path)  (max_capacitance)
+  ----------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                             MIN DELAY
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            COST   
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:01:36   19572.0      1.03      98.3     154.2                              -26.98
+  Global Optimization (Phase 32)
+  Global Optimization (Phase 33)
+  Global Optimization (Phase 34)
+    0:01:38   19998.5      1.03      98.4       0.0 gpr_u0/gpr_reg[25][12]/D      -4.02
+    0:01:39   20091.5      1.03      98.4       0.0                                0.00
+    0:01:40   19498.5      1.03      98.1       0.0                              -12.10
+    0:01:40   19498.5      1.03      98.1       0.0                              -12.10
+    0:01:42   19404.5      1.03      96.8       0.0 pc_u0/pc_val_reg[26]/D       -12.08
+    0:01:43   19372.5      1.02      95.9       0.0 pc_u0/pc_val_reg[26]/D       -12.09
+    0:01:43   19372.5      1.02      95.9       0.0                              -12.09
+    0:01:47   19373.5      1.02      95.9       0.0                              -12.09
+    0:01:48   19816.5      1.02      95.9       0.0                                0.00
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                             MIN DELAY
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            COST   
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:01:48   19816.5      1.02      95.9       0.0                                0.00
+    0:01:49   19141.0      1.02      95.8       0.0                               -6.51
+
+
+  Beginning Area-Recovery Phase  (max_area 0)
+  -----------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                             MIN DELAY
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            COST   
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:01:50   19141.0      1.02      95.8       0.0                               -6.51
+  Global Optimization (Phase 35)
+  Global Optimization (Phase 36)
+  Global Optimization (Phase 37)
+  Global Optimization (Phase 38)
+  Global Optimization (Phase 39)
+  Global Optimization (Phase 40)
+  Global Optimization (Phase 41)
+  Global Optimization (Phase 42)
+  Global Optimization (Phase 43)
+  Global Optimization (Phase 44)
+  Global Optimization (Phase 45)
+  Global Optimization (Phase 46)
+  Global Optimization (Phase 47)
+  Global Optimization (Phase 48)
+  Global Optimization (Phase 49)
+  Global Optimization (Phase 50)
+  Global Optimization (Phase 51)
+  Global Optimization (Phase 52)
+  Global Optimization (Phase 53)
+  Global Optimization (Phase 54)
+  Global Optimization (Phase 55)
+  Global Optimization (Phase 56)
+  Global Optimization (Phase 57)
+  Global Optimization (Phase 58)
+  Global Optimization (Phase 59)
+  Global Optimization (Phase 60)
+  Global Optimization (Phase 61)
+  Global Optimization (Phase 62)
+  Global Optimization (Phase 63)
+  Global Optimization (Phase 64)
+  Global Optimization (Phase 65)
+  Global Optimization (Phase 66)
+  Global Optimization (Phase 67)
+  Global Optimization (Phase 68)
+  Global Optimization (Phase 69)
+  Global Optimization (Phase 70)
+  Global Optimization (Phase 71)
+    0:01:58   18322.0      1.00     105.2       0.0                              -13.76
+    0:02:00   18322.5      1.00     105.2       0.0                              -13.76
+    0:02:01   18607.0      0.99     108.4       0.0                               -0.01
+    0:02:02   18626.0      0.99     109.5       0.0                               -0.07
+    0:02:03   18742.0      0.99     107.1       0.0                               -0.42
+    0:02:04   18813.0      0.99     106.3       0.0                               -1.59
+    0:02:08   18813.0      0.99     106.3       0.0                               -1.59
+    0:02:08   18813.0      0.99     106.3       0.0                               -1.59
+    0:02:08   18832.5      0.99     106.3       0.0                               -1.59
+    0:02:08   18832.5      0.99     106.3       0.0                               -1.59
+    0:02:11   18832.5      0.99     106.3       0.0                               -1.59
+    0:02:11   18832.5      0.99     106.3       0.0                               -1.59
+    0:02:14   18889.0      0.98     105.5       0.0                               -1.61
+    0:02:14   18889.0      0.98     105.5       0.0                               -1.61
+    0:02:15   18889.0      0.98     105.5       0.0                               -1.61
+    0:02:15   18889.0      0.98     105.5       0.0                               -1.61
+    0:02:15   18889.0      0.98     105.5       0.0                               -1.61
+    0:02:15   18889.0      0.98     105.5       0.0                               -1.61
+    0:02:17   18889.0      0.98     105.5       0.0                               -1.61
+    0:02:17   18889.0      0.98     105.5       0.0                               -1.61
+    0:02:17   18889.0      0.98     105.5       0.0                               -1.61
+    0:02:17   18889.0      0.98     105.5       0.0                               -1.61
+    0:02:18   18889.0      0.98     105.5       0.0                               -1.61
+Loading db file '/apps/toshiba/sjsu/synopsys/tc240c/tc240c.db_NOMIN25'
+
+  Optimization Complete
+  ---------------------
+Warning: Design 'processor' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+     Net 'clock': 1316 load(s), 1 driver(s)
+1
+create_clock clock -name clock -period 4.0
+1
+update_timing
+Information: Updating design information... (UID-85)
+Warning: Design 'processor' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+1
+report_timing -max_paths 3
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 3
+Design : processor
+Version: I-2013.12-SP5
+Date   : Tue May  5 15:21:15 2015
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: NOMIN25   Library: tc240c
+Wire Load Model Mode: top
+
+  Startpoint: fd_Inst_reg[0]
+              (rising edge-triggered flip-flop clocked by clock)
+  Endpoint: fd_Inst_reg[15]
+            (rising edge-triggered flip-flop clocked by clock)
+  Path Group: clock
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  processor          T8G00TW8              tc240c
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clock (rise edge)                  0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  fd_Inst_reg[0]/CP (CFD2QX1)              0.00 #     0.00 r
+  fd_Inst_reg[0]/Q (CFD2QX1)               0.34       0.34 f
+  U2223/Z (CNR3X4)                         0.17       0.51 r
+  U2226/Z (CND3X4)                         0.15       0.66 f
+  U2230/Z (CNR2X4)                         0.10       0.77 r
+  U2338/Z (CMXI2X2)                        0.35       1.12 r
+  U2339/Z (CIVX8)                          0.10       1.22 f
+  U1329/Z (CENX2)                          0.18       1.39 f
+  U2367/Z (CNR2X4)                         0.12       1.52 r
+  U2372/Z (CND3X4)                         0.15       1.66 f
+  U2397/Z (CIVX4)                          0.07       1.73 r
+  U2429/Z (CNR2X4)                         0.09       1.83 f
+  U2437/Z (CIVX8)                          0.10       1.93 r
+  U2438/Z (CIVX8)                          0.06       1.99 f
+  U2440/Z (CANR1X4)                        0.12       2.11 r
+  U2441/Z (CNR2X4)                         0.07       2.19 f
+  U2444/Z (CNR3X4)                         0.14       2.32 r
+  U2456/Z (CND3X2)                         0.12       2.44 f
+  U2457/Z (CNR2IX2)                        0.09       2.53 r
+  U2491/Z (CND3X2)                         0.11       2.65 f
+  U2492/Z (CIVX3)                          0.06       2.71 r
+  U2545/Z (CND3X4)                         0.12       2.83 f
+  U2729/Z (CANR1X2)                        0.13       2.95 r
+  U2739/Z (CND3X4)                         0.15       3.11 f
+  U2740/Z (CIVX8)                          0.10       3.21 r
+  U2752/Z (CNIVX4)                         0.15       3.35 r
+  U3705/Z (CND2X1)                         0.08       3.44 f
+  U3706/Z (COND1X1)                        0.08       3.52 r
+  fd_Inst_reg[15]/D (CFD2QX2)              0.00       3.52 r
+  data arrival time                                   3.52
+
+  clock clock (rise edge)                  4.00       4.00
+  clock network delay (ideal)              0.00       4.00
+  clock uncertainty                       -0.25       3.75
+  fd_Inst_reg[15]/CP (CFD2QX2)             0.00       3.75 r
+  library setup time                      -0.21       3.54
+  data required time                                  3.54
+  -----------------------------------------------------------
+  data required time                                  3.54
+  data arrival time                                  -3.52
+  -----------------------------------------------------------
+  slack (MET)                                         0.02
+
+
+  Startpoint: fd_Inst_reg[0]
+              (rising edge-triggered flip-flop clocked by clock)
+  Endpoint: fd_Inst_reg[7]
+            (rising edge-triggered flip-flop clocked by clock)
+  Path Group: clock
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  processor          T8G00TW8              tc240c
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clock (rise edge)                  0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  fd_Inst_reg[0]/CP (CFD2QX1)              0.00 #     0.00 r
+  fd_Inst_reg[0]/Q (CFD2QX1)               0.34       0.34 f
+  U2223/Z (CNR3X4)                         0.17       0.51 r
+  U2226/Z (CND3X4)                         0.15       0.66 f
+  U2230/Z (CNR2X4)                         0.10       0.77 r
+  U2338/Z (CMXI2X2)                        0.35       1.12 r
+  U2339/Z (CIVX8)                          0.10       1.22 f
+  U1329/Z (CENX2)                          0.18       1.39 f
+  U2367/Z (CNR2X4)                         0.12       1.52 r
+  U2372/Z (CND3X4)                         0.15       1.66 f
+  U2397/Z (CIVX4)                          0.07       1.73 r
+  U2429/Z (CNR2X4)                         0.09       1.83 f
+  U2437/Z (CIVX8)                          0.10       1.93 r
+  U2438/Z (CIVX8)                          0.06       1.99 f
+  U2440/Z (CANR1X4)                        0.12       2.11 r
+  U2441/Z (CNR2X4)                         0.07       2.19 f
+  U2444/Z (CNR3X4)                         0.14       2.32 r
+  U2456/Z (CND3X2)                         0.12       2.44 f
+  U2457/Z (CNR2IX2)                        0.09       2.53 r
+  U2491/Z (CND3X2)                         0.11       2.65 f
+  U2492/Z (CIVX3)                          0.06       2.71 r
+  U2545/Z (CND3X4)                         0.12       2.83 f
+  U2729/Z (CANR1X2)                        0.13       2.95 r
+  U2739/Z (CND3X4)                         0.15       3.11 f
+  U2740/Z (CIVX8)                          0.10       3.21 r
+  U2752/Z (CNIVX4)                         0.15       3.35 r
+  U3818/Z (CND2X1)                         0.08       3.44 f
+  U3819/Z (COND1X1)                        0.08       3.52 r
+  fd_Inst_reg[7]/D (CFD2QX2)               0.00       3.52 r
+  data arrival time                                   3.52
+
+  clock clock (rise edge)                  4.00       4.00
+  clock network delay (ideal)              0.00       4.00
+  clock uncertainty                       -0.25       3.75
+  fd_Inst_reg[7]/CP (CFD2QX2)              0.00       3.75 r
+  library setup time                      -0.21       3.54
+  data required time                                  3.54
+  -----------------------------------------------------------
+  data required time                                  3.54
+  data arrival time                                  -3.52
+  -----------------------------------------------------------
+  slack (MET)                                         0.02
+
+
+  Startpoint: fd_Inst_reg[0]
+              (rising edge-triggered flip-flop clocked by clock)
+  Endpoint: fd_Inst_reg[9]
+            (rising edge-triggered flip-flop clocked by clock)
+  Path Group: clock
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  processor          T8G00TW8              tc240c
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clock (rise edge)                  0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  fd_Inst_reg[0]/CP (CFD2QX1)              0.00 #     0.00 r
+  fd_Inst_reg[0]/Q (CFD2QX1)               0.34       0.34 f
+  U2223/Z (CNR3X4)                         0.17       0.51 r
+  U2226/Z (CND3X4)                         0.15       0.66 f
+  U2230/Z (CNR2X4)                         0.10       0.77 r
+  U2338/Z (CMXI2X2)                        0.35       1.12 r
+  U2339/Z (CIVX8)                          0.10       1.22 f
+  U1329/Z (CENX2)                          0.18       1.39 f
+  U2367/Z (CNR2X4)                         0.12       1.52 r
+  U2372/Z (CND3X4)                         0.15       1.66 f
+  U2397/Z (CIVX4)                          0.07       1.73 r
+  U2429/Z (CNR2X4)                         0.09       1.83 f
+  U2437/Z (CIVX8)                          0.10       1.93 r
+  U2438/Z (CIVX8)                          0.06       1.99 f
+  U2440/Z (CANR1X4)                        0.12       2.11 r
+  U2441/Z (CNR2X4)                         0.07       2.19 f
+  U2444/Z (CNR3X4)                         0.14       2.32 r
+  U2456/Z (CND3X2)                         0.12       2.44 f
+  U2457/Z (CNR2IX2)                        0.09       2.53 r
+  U2491/Z (CND3X2)                         0.11       2.65 f
+  U2492/Z (CIVX3)                          0.06       2.71 r
+  U2545/Z (CND3X4)                         0.12       2.83 f
+  U2729/Z (CANR1X2)                        0.13       2.95 r
+  U2739/Z (CND3X4)                         0.15       3.11 f
+  U2740/Z (CIVX8)                          0.10       3.21 r
+  U2752/Z (CNIVX4)                         0.15       3.35 r
+  U3820/Z (CND2X1)                         0.08       3.44 f
+  U3821/Z (COND1X1)                        0.08       3.52 r
+  fd_Inst_reg[9]/D (CFD2QX2)               0.00       3.52 r
+  data arrival time                                   3.52
+
+  clock clock (rise edge)                  4.00       4.00
+  clock network delay (ideal)              0.00       4.00
+  clock uncertainty                       -0.25       3.75
+  fd_Inst_reg[9]/CP (CFD2QX2)              0.00       3.75 r
+  library setup time                      -0.21       3.54
+  data required time                                  3.54
+  -----------------------------------------------------------
+  data required time                                  3.54
+  data arrival time                                  -3.52
+  -----------------------------------------------------------
+  slack (MET)                                         0.02
+
+
+1
+write -hierarchy -format verilog -output p_mips_netlist.v
+Writing verilog file '/home/jo/jose9145/ee275/p_mips_opt/p_mips_netlist.v'.
+1
+quit
+
+Thank you...
